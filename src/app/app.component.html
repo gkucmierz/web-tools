@@ -1,6 +1,22 @@
 
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <span>Web Tools</span>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="container">
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span>Web Tools</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+
+  <mat-drawer-container class="tool-container" autosize>
+    <mat-drawer #drawer class="menu-sidenav" mode="side">
+      <p>Menu</p>
+    </mat-drawer>
+
+    <div class="example-sidenav-content">
+      <button type="button" mat-button (click)="drawer.toggle()">
+        Toggle sidenav
+      </button>
+    </div>
+
+  </mat-drawer-container>
+</div>
