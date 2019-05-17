@@ -3,16 +3,24 @@
 
   <mat-toolbar color="primary">
     <mat-toolbar-row>
-      <span>Web Tools</span>
+
+      <mat-icon mat-button
+        class="menu-icon"
+        aria-hidden="false"
+        aria-label="Menu"
+        (click)="drawer.toggle()">menu</mat-icon>
+
+      <span class="toolbar-title">Web Tools</span>
+
     </mat-toolbar-row>
   </mat-toolbar>
 
-  <mat-drawer-container class="tool-container" autosize>
+  <mat-drawer-container class="tools-container" autosize>
     <mat-drawer #drawer mode="side" opened>
       <app-menu></app-menu>
     </mat-drawer>
 
-    <div class="example-sidenav-content">
+    <div class="tools-content">
       <router-outlet></router-outlet>
     </div>
   </mat-drawer-container>

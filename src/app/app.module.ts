@@ -10,6 +10,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
+import {MatIconModule} from '@angular/material/icon';
 
 import { MenuComponent } from './menu/menu.component';
 import { QrReaderComponent } from './qr-reader/qr-reader.component';
@@ -30,6 +31,7 @@ import { QrReaderComponent } from './qr-reader/qr-reader.component';
     MatSidenavModule,
     MatButtonModule,
     MatListModule,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
