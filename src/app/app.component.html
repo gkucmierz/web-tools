@@ -8,15 +8,13 @@
   </mat-toolbar>
 
   <mat-drawer-container class="tool-container" autosize>
-    <mat-drawer #drawer class="menu-sidenav" mode="side">
-      <p>Menu</p>
+    <mat-drawer #drawer mode="side" opened>
+      <app-menu></app-menu>
     </mat-drawer>
 
     <div class="example-sidenav-content">
-      <button type="button" mat-button (click)="drawer.toggle()">
-        Toggle sidenav
-      </button>
+      <router-outlet></router-outlet>
     </div>
-
   </mat-drawer-container>
+
 </div>
