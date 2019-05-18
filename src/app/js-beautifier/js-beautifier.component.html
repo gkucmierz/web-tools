@@ -1,0 +1,12 @@
+
+<mat-form-field class="full-width textarea">
+  <textarea matInput
+    [(ngModel)]="code"
+    rows="15"
+    placeholder="Paste code here"></textarea>
+</mat-form-field>
+
+<button mat-raised-button
+  color="primary"
+  class="full-width"
+  (click)="beautify()">Beautify</button>
