@@ -11,16 +11,19 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatButtonModule} from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
+
+import { NgQrScannerModule } from 'angular2-qrscanner';
 
 import { MenuComponent } from './menu/menu.component';
-import { QrReaderComponent } from './qr-reader/qr-reader.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     
     MenuComponent,
-    QrReaderComponent
+    QrScannerComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +35,9 @@ import { QrReaderComponent } from './qr-reader/qr-reader.component';
     MatButtonModule,
     MatListModule,
     MatIconModule,
+    MatButtonToggleModule,
+
+    NgQrScannerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

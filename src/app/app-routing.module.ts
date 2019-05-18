@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { QrReaderComponent } from './qr-reader/qr-reader.component';
+import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
 
 const routes: Routes = [
-  { path: 'qr-reader', component: QrReaderComponent },
+  { path: 'qr-scanner', component: QrScannerComponent },
 ];
 
 @NgModule({
