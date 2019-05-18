@@ -1,0 +1,14 @@
+language: node_js
+node_js:
+  - "11.0"
+branches:
+  only:
+    - master
+before_script:
+  - npm install -g @angular/cli
+  - npm install -g firebase-tools
+script:
+  - npm install
+  - ng build --prod
+after_success:
+  - firebase deploy --token=${FIREBASE_API_TOKEN}
