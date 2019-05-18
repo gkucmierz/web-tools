@@ -1,0 +1,6 @@
+
+<barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)"></barcode-scanner-livestream>
+
+<div [hidden]="!barcodeValue">
+  {{barcodeValue}}
+</div>

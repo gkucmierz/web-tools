@@ -14,16 +14,19 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
+import { BarecodeScannerLivestreamModule } from 'ngx-barcode-scanner';
 
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+import { BarcodeScannerComponent } from './barcode-scanner/barcode-scanner.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     
     MenuComponent,
-    QrScannerComponent
+    QrScannerComponent,
+    BarcodeScannerComponent
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,7 @@ import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
     MatButtonToggleModule,
 
     NgQrScannerModule,
+    BarecodeScannerLivestreamModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
