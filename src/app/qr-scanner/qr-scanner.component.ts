@@ -12,7 +12,7 @@ export class QrScannerComponent implements OnInit {
 
   lastScan: string;
   scanned: string[] = [];
-  outputType:string = 'list';
+  outputType = 'list';
 
   constructor() { }
 
@@ -24,17 +24,17 @@ export class QrScannerComponent implements OnInit {
   ngOnInit() {
     this.qrScannerComponent.getMediaDevices().then(devices => {
       const videoDevices: MediaDeviceInfo[] = [];
-      
+
       for (const device of devices) {
         if (device.kind.toString() === 'videoinput') {
           videoDevices.push(device);
         }
       }
-      
+
       if (videoDevices.length > 0) {
         let choosenDev;
-        for (const dev of videoDevices){
-          if (dev.label.includes('front')){
+        for (const dev of videoDevices) {
+          if (dev.label.includes('front')) {
             choosenDev = dev;
             break;
           }
@@ -51,7 +51,7 @@ export class QrScannerComponent implements OnInit {
     this.qrScannerComponent.capturedQr.subscribe(result => {
       if (this.lastScan !== result) {
         this.lastScan = result;
-        this.scanned.push(result);  
+        this.scanned.push(result);
       }
     });
   }

@@ -27,7 +27,6 @@ import { JsBeautifierComponent } from './js-beautifier/js-beautifier.component';
 @NgModule({
   declarations: [
     AppComponent,
-    
     MenuComponent,
     QrScannerComponent,
     JsBeautifierComponent
@@ -38,7 +37,6 @@ import { JsBeautifierComponent } from './js-beautifier/js-beautifier.component';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
@@ -47,7 +45,6 @@ import { JsBeautifierComponent } from './js-beautifier/js-beautifier.component';
     MatButtonToggleModule,
     MatFormFieldModule,
     MatInputModule,
-
     NgQrScannerModule,
     MatCodemirrorModule,
   ],

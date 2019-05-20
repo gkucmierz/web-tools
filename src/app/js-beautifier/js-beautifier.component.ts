@@ -9,6 +9,7 @@ import * as beautify from 'js-beautify';
 })
 export class JsBeautifierComponent implements OnInit {
   code: string;
+  public codeGroup;
 
   constructor() {
     this.codeGroup = new FormGroup({
