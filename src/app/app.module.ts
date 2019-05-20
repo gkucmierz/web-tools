@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -18,6 +18,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
+import { MatCodemirrorModule } from 'ngx-mat-codemirror';
 
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
@@ -36,6 +37,7 @@ import { JsBeautifierComponent } from './js-beautifier/js-beautifier.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
+    ReactiveFormsModule,
 
     MatToolbarModule,
     MatSidenavModule,
@@ -47,6 +49,7 @@ import { JsBeautifierComponent } from './js-beautifier/js-beautifier.component';
     MatInputModule,
 
     NgQrScannerModule,
+    MatCodemirrorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

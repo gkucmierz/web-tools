@@ -1,12 +1,20 @@
 
-<mat-form-field class="full-width textarea">
-  <textarea matInput
-    [(ngModel)]="code"
-    rows="15"
-    placeholder="Paste code here"></textarea>
-</mat-form-field>
+<div class="container">
+  <div class="middle">
+    <div [formGroup]="codeGroup">
+      <mat-form-field class="full-width code">
+        <mat-codemirror formControlName="code"
+          [(ngModel)]="code"  
+          [options]="{ theme: 'neat', mode: 'yaml' }"
+          placeholder="Code"></mat-codemirror>
+      </mat-form-field>
+    </div>
+  </div>
 
-<button mat-raised-button
-  color="primary"
-  class="full-width"
-  (click)="beautify()">Beautify</button>
+  <div>
+    <button mat-raised-button
+      color="primary"
+      class="full-width"
+      (click)="beautify()">Beautify</button>
+  </div>
+</div>

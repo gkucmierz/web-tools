@@ -1,3 +1,4 @@
+$padding-size: 15px;
 
 .container {
   height: 100vh;
@@ -25,7 +26,8 @@
   .inside {
     margin: 0;
     width: 100%;
-    padding: 0 15px 0 15px;
+    height: calc(100% - #{$padding-size} * 2);
+    padding: $padding-size;
   }
 }
 

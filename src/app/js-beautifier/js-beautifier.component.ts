@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import * as beautify from 'js-beautify';
 
 @Component({
@@ -9,7 +10,11 @@ import * as beautify from 'js-beautify';
 export class JsBeautifierComponent implements OnInit {
   code: string;
 
-  constructor() { }
+  constructor() {
+    this.codeGroup = new FormGroup({
+      code: new FormControl()
+    });
+  }
 
   beautify() {
     this.code = beautify(this.code, {
