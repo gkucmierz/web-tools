@@ -1,4 +1,15 @@
 
+<mat-button-toggle-group
+  *ngIf="cameras.length > 1"
+  class="full-width"
+  [value]="cameraIdx"
+  (change)="changeCamera($event.value)"
+  aria-label="Output Type">
+  <mat-button-toggle
+    *ngFor="let camera of cameras; let i = index"
+    [value]="i">{{i}}</mat-button-toggle>
+</mat-button-toggle-group>
+
 <qr-scanner
   [debug]="false"
   [canvasWidth]="1080"
@@ -8,7 +19,7 @@
 </qr-scanner>
 
 <mat-button-toggle-group
-  class="output-type"
+  class="full-width"
   [(value)]="outputType"
   aria-label="Output Type">
   <mat-button-toggle value="list">List</mat-button-toggle>
