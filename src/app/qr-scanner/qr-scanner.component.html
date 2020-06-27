@@ -1,0 +1,41 @@
+
+<mat-button-toggle-group
+  *ngIf="cameras.length > 1"
+  class="full-width"
+  [value]="cameraIdx"
+  (change)="changeCamera($event.value)"
+  aria-label="Output Type">
+  <mat-button-toggle
+    *ngFor="let camera of cameras; let i = index"
+    [value]="i">{{i}}</mat-button-toggle>
+</mat-button-toggle-group>
+
+<qr-scanner
+  [debug]="false"
+  [canvasWidth]="1080"
+  [canvasHeight]="720"
+  [stopAfterScan]="false"
+  [updateTime]="200">
+</qr-scanner>
+
+<mat-button-toggle-group
+  class="full-width"
+  [(value)]="outputType"
+  aria-label="Output Type">
+  <mat-button-toggle value="list">List</mat-button-toggle>
+  <mat-button-toggle value="json">JSON</mat-button-toggle>
+</mat-button-toggle-group>
+
+<div class="output">
+  <div *ngIf="outputType === 'list'">
+    <mat-list>
+      <mat-list-item *ngFor="let scan of scanned">{{scan}}</mat-list-item>
+    </mat-list>
+  </div>
+
+  <div *ngIf="outputType === 'json'">
+    <pre>{{scanned | json}}</pre>
+  </div>
+</div>
+
+<button mat-raised-button color="warn" (click)="clear()">Clear</button>
