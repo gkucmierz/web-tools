@@ -20,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 
 import { MenuComponent } from './menu/menu.component';
-import { QrScannerComponent } from './qr-scanner/qr-scanner.component';
+import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
 
 @NgModule({
   declarations: [
