@@ -21,12 +21,14 @@ import { NgQrScannerModule } from 'angular2-qrscanner';
 
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
+import { QrCodeComponent } from './tools/qr-code/qr-code.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     QrScannerComponent,
+    QrCodeComponent,
   ],
   imports: [
     BrowserModule,
