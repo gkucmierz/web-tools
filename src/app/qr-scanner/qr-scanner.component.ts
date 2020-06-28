@@ -19,17 +19,17 @@ export class QrScannerComponent implements OnInit {
 
   constructor() { }
 
-  clear() {
+  clear(): void {
     this.scanned = [];
     delete this.lastScan;
   }
 
-  changeCamera(cameraIdx) {
+  changeCamera(cameraIdx): void {
     this.cameraIdx = cameraIdx;
     this.qrScanner.chooseCamera.next(this.cameras[this.cameraIdx]);
   }
 
-  wait(prop, cb) {
+  wait(prop, cb): void {
     const DELAY = 50;
     const loop = () => {
       if (prop in this) {
@@ -41,7 +41,7 @@ export class QrScannerComponent implements OnInit {
     loop();
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.wait('qrScanner', qrScanner => {
       this.qrScanner.getMediaDevices().then(devices => {
         const videoDevices: MediaDeviceInfo[] = [];
@@ -73,7 +73,6 @@ export class QrScannerComponent implements OnInit {
         }
       });
     });
-      
   }
 
 }
