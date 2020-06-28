@@ -6,7 +6,6 @@ import { QrScannerComponent as QrScanner } from 'angular2-qrscanner';
   selector: 'app-qr-scanner',
   templateUrl: './qr-scanner.component.html',
   styleUrls: ['./qr-scanner.component.scss'],
-  encapsulation: ViewEncapsulation.None,
 })
 export class QrScannerComponent implements OnInit {
   @ViewChild(QrScanner) qrScanner: QrScanner;
