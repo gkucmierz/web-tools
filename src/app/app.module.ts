@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
+import { QrCodeModule } from 'ng-qrcode';
 
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
@@ -45,6 +46,7 @@ import { QrCodeComponent } from './tools/qr-code/qr-code.component';
     MatFormFieldModule,
     MatInputModule,
     NgQrScannerModule,
+    QrCodeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

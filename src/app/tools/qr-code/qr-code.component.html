@@ -1,1 +1,27 @@
-<p>qr-code works!</p>
+
+<p>
+  <mat-form-field>
+    <mat-label>Value</mat-label>
+    <input matInput type="text" [(ngModel)]="value">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-form-field>
+    <mat-label>Size</mat-label>
+    <input matInput type="text" [(ngModel)]="size">
+  </mat-form-field>
+</p>
+
+<p>
+  <mat-button-toggle-group [(value)]="errorCorrectionLevel" aria-label="Error Correction Level">
+    <mat-button-toggle value="L">Low</mat-button-toggle>
+    <mat-button-toggle value="M">Medium</mat-button-toggle>
+    <mat-button-toggle value="Q">Quality</mat-button-toggle>
+    <mat-button-toggle value="H">Highest</mat-button-toggle>
+  </mat-button-toggle-group>
+</p>
+
+<p>
+  <qr-code [value]="value" [size]="size" [errorCorrectionLevel]="errorCorrectionLevel"></qr-code>
+</p>
