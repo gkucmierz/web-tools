@@ -16,6 +16,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeModule } from 'ng-qrcode';
@@ -23,6 +24,7 @@ import { QrCodeModule } from 'ng-qrcode';
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
 import { QrCodeComponent } from './tools/qr-code/qr-code.component';
+import { PasswordsComponent } from './tools/passwords/passwords.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +32,7 @@ import { QrCodeComponent } from './tools/qr-code/qr-code.component';
     MenuComponent,
     QrScannerComponent,
     QrCodeComponent,
+    PasswordsComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +48,7 @@ import { QrCodeComponent } from './tools/qr-code/qr-code.component';
     MatButtonToggleModule,
     MatFormFieldModule,
     MatInputModule,
+    MatCheckboxModule,
     NgQrScannerModule,
     QrCodeModule,
   ],
