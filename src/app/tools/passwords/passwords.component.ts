@@ -16,7 +16,7 @@ export class PasswordsComponent implements OnInit {
   digits = true;
   specialChars = false;
   other = false;
-  otherChars = '';
+  otherChars = '😄🤖';
   passwordLength = 16;
   passwordsNumber = 20;
 
@@ -29,13 +29,13 @@ export class PasswordsComponent implements OnInit {
 
   generate(): void {
     const array = size => new Array(size || 0).fill(0);
-    const str = [
+    const chars = [...[
       ...(this.lowerCase ? [LOWER_CASE] : []),
       ...(this.upperCase ? [UPPER_CASE] : []),
       ...(this.digits ? [DIGITS] : []),
       ...(this.specialChars ? [SPECIAL_CHARS] : []),
       ...(this.other ? [this.otherChars] : []),
-    ].join('');
+    ].join('')];
 
     const size = this.passwordsNumber * this.passwordLength;
     const rand = new Uint32Array(size);
@@ -44,7 +44,7 @@ export class PasswordsComponent implements OnInit {
     let pointer = 0;
     this.passwords = array(this.passwordsNumber).map(() => {
       return array(this.passwordLength).map(() => {
-        return str[rand[pointer++] % str.length];
+        return chars[rand[pointer++] % chars.length];
       }).join('');
     }).join('\n');
   }
