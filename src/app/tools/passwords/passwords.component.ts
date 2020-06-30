@@ -37,9 +37,14 @@ export class PasswordsComponent implements OnInit {
       ...(this.other ? [this.otherChars] : []),
     ].join('');
 
+    const size = this.passwordsNumber * this.passwordLength;
+    const rand = new Uint32Array(size);
+    
+    crypto.getRandomValues(rand);
+    let pointer = 0;
     this.passwords = array(this.passwordsNumber).map(() => {
       return array(this.passwordLength).map(() => {
-        return str[Math.round(Math.random() * str.length) % str.length];
+        return str[rand[pointer++] % str.length];
       }).join('');
     }).join('\n');
   }
