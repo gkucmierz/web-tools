@@ -25,6 +25,7 @@ import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
 import { QrCodeComponent } from './tools/qr-code/qr-code.component';
 import { PasswordsComponent } from './tools/passwords/passwords.component';
+import { Base64Component } from './tools/base64/base64.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { PasswordsComponent } from './tools/passwords/passwords.component';
     QrScannerComponent,
     QrCodeComponent,
     PasswordsComponent,
+    Base64Component,
   ],
   imports: [
     BrowserModule,

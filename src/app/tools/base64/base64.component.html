@@ -1,0 +1,10 @@
+
+<mat-form-field class="full-width text" appearance="outline">
+  <mat-label>Text to Encode/Decode</mat-label>
+  <textarea matInput rows="20" [(ngModel)]="text"></textarea>
+</mat-form-field>
+
+<div class="full-width buttons-row">
+  <button mat-raised-button color="primary" (click)="encode()">Encode</button>
+  <button mat-raised-button color="secondary" (click)="decode()">Decode</button>
+</div>
