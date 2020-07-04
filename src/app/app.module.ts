@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeModule } from 'ng-qrcode';
@@ -29,6 +30,7 @@ import { QrCodeComponent } from './tools/qr-code/qr-code.component';
 import { PasswordsComponent } from './tools/passwords/passwords.component';
 import { Base64Component } from './tools/base64/base64.component';
 import { MarkdownComponent } from './tools/markdown/markdown.component';
+import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { MarkdownComponent } from './tools/markdown/markdown.component';
     PasswordsComponent,
     Base64Component,
     MarkdownComponent,
+    CpuLoadComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ import { MarkdownComponent } from './tools/markdown/markdown.component';
     MatInputModule,
     MatCheckboxModule,
     MatGridListModule,
+    MatSlideToggleModule,
     NgQrScannerModule,
     QrCodeModule,
   ],

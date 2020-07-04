@@ -1,0 +1,22 @@
+
+<p>cpu-load works!</p>
+
+{{ cores | json }}
+
+<mat-list role="list">
+  <mat-list-item role="listitem" *ngFor="let core of cores;">
+    <mat-slide-toggle
+      [(ngModel)]="core.value"
+      (toggleChange)="change()">Core {{ core.idx }}</mat-slide-toggle>
+  </mat-list-item>
+
+  <mat-divider></mat-divider>
+
+  <mat-list-item role="listitem">
+    <mat-slide-toggle
+      color="primary"
+      #allCores
+      (toggleChange)="changeAll(!allCores.checked)">All Cores</mat-slide-toggle>
+  </mat-list-item>
+</mat-list>
+
