@@ -26,6 +26,7 @@ import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
 import { QrCodeComponent } from './tools/qr-code/qr-code.component';
 import { PasswordsComponent } from './tools/passwords/passwords.component';
 import { Base64Component } from './tools/base64/base64.component';
+import { MarkdownComponent } from './tools/markdown/markdown.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { Base64Component } from './tools/base64/base64.component';
     QrCodeComponent,
     PasswordsComponent,
     Base64Component,
+    MarkdownComponent,
   ],
   imports: [
     BrowserModule,
