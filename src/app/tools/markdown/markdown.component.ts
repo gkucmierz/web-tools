@@ -1,4 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
+import { markdown } from 'markdown';
+
+const NEW_LINE = '\n';
 
 @Component({
   selector: 'app-markdown',
@@ -6,13 +9,16 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   styleUrls: ['./markdown.component.scss'],
   encapsulation: ViewEncapsulation.None
 })
-export class MarkdownComponent implements OnInit {
-  source = 'markdown';
+export class MarkdownComponent {
+  source = `# Markdown Viewer${NEW_LINE}${NEW_LINE}Simple **tool**, that helps to visualise **markdown**`;
   output = 'output';
 
-  constructor() { }
+  constructor() {
+    this.change();
+  }
 
-  ngOnInit(): void {
+  change(): void {
+    this.output = markdown.toHTML(this.source);
   }
 
 }

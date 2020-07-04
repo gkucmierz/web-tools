@@ -5,12 +5,14 @@
     <mat-grid-tile>
       <mat-form-field class="source" appearance="outline">
         <mat-label>Text to Encode/Decode</mat-label>
-        <textarea matInput [(ngModel)]="source"></textarea>
+        <textarea matInput
+          [(ngModel)]="source"
+          (ngModelChange)="change()"></textarea>
       </mat-form-field>
     </mat-grid-tile>
 
     <mat-grid-tile>
-      {{ output }}
+      <div [innerHTML]="output"></div>
     </mat-grid-tile>
 
   </mat-grid-list>
