@@ -10,7 +10,8 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "build:prod": "ng build --prod",
-    "deploy:firebase": "firebase deploy --token ${FIREBASE_API_TOKEN}"
+    "deploy:firebase": "firebase deploy --token ${FIREBASE_API_TOKEN}",
+    "publish": "npm run build:prod && firebase deploy"
   },
   "husky": {
     "hooks": {
