@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 
 const UNDEFINED = [][0];
 const NEXT_TICK = 0;
@@ -16,8 +16,9 @@ type Core = {
   templateUrl: './cpu-load.component.html',
   styleUrls: ['./cpu-load.component.scss']
 })
-export class CpuLoadComponent implements OnInit, OnDestroy {
+export class CpuLoadComponent implements OnDestroy {
   cores: Core[];
+  all = false;
 
   constructor() {
     this.cores = Array(navigator.hardwareConcurrency || 8)
@@ -56,12 +57,11 @@ export class CpuLoadComponent implements OnInit, OnDestroy {
            this.restartWorker(core);
         }
       });
-
-      // const values = this.cores.map((core: Core) => core.value);
-      // const allTrue = values.every(value => value === true);
-      // const allFalse = values.every(value => value === false);
-      // allTrue && this.changeAll(true);
-      // allFalse && this.changeAll(false);
+      const values = this.cores.map((core: Core) => core.value);
+      const allTrue = values.every(value => value === true);
+      const allFalse = values.every(value => value === false);
+      if (allTrue) this.all = true;
+      if (allFalse) this.all = false;
     }, NEXT_TICK);
   }
 
@@ -70,13 +70,9 @@ export class CpuLoadComponent implements OnInit, OnDestroy {
     this.change();
   }
 
-  ngOnInit(): void {
-  }
-
   ngOnDestroy(): void {
     this.cores.map(this.terminateWorker);
   }
-
 }
 
 // if (typeof Worker !== 'undefined') {

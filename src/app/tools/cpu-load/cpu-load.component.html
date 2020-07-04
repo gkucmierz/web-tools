@@ -15,8 +15,7 @@
     <mat-slide-toggle
       color="primary"
       #allCores
+      [(ngModel)]="all"
       (toggleChange)="changeAll(!allCores.checked)">All Cores</mat-slide-toggle>
   </mat-list-item>
 </mat-list>
-
-<!-- {{ cores | json }} -->
