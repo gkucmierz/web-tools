@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation } from '@angular/core';
-import { markdown } from 'markdown';
+import { MarkdownService } from '../../services/markdown.service';
 
 const NEW_LINE = '\n';
 
@@ -13,12 +13,11 @@ export class MarkdownComponent {
   source = `# Markdown Viewer${NEW_LINE}${NEW_LINE}Simple **tool**, that helps to visualise **markdown**`;
   output = 'output';
 
-  constructor() {
+  constructor(private markdown: MarkdownService) {
     this.change();
   }
 
   change(): void {
-    this.output = markdown.toHTML(this.source);
+    this.output = this.markdown.compile(this.source);
   }
-
 }
