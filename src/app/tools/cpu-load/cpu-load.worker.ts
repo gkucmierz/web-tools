@@ -1,15 +1,18 @@
 /// <reference lib="webworker" />
 
 const DELAY = 50;
+const getTime = () => +new Date();
 
-let cnt = 0;
-let lastDate = +new Date();
-while (true) {
-  const date = +new Date();
-  if (date - lastDate >= DELAY) {
-    postMessage(cnt);
-    lastDate = date;
+addEventListener('message', () => {
+  let cnt = 0;
+  let lastTime = getTime();
+  while (true) {
+    const time = getTime();
+    if (time - lastTime >= DELAY) {
+      postMessage(cnt);
+      lastTime = time;
+    }
+    ++cnt;
   }
-  ++cnt;
-}
+});
 

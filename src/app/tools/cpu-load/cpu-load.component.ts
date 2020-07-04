@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 
 const UNDEFINED = [][0];
 const NEXT_TICK = 0;
+const WHATEVER = 0;
 
 type Core = {
   idx: number;
@@ -25,34 +26,34 @@ export class CpuLoadComponent implements OnInit, OnDestroy {
         idx: i + 1,
         value: false
       }));
+    this.cores.map(this.restartWorker);
   }
 
-  spawnWorker(core: Core): void {
-    // load after tick to avoid switch rendering block
-    setTimeout(() => {
-      core.worker = new Worker('./cpu-load.worker', { type: 'module' });
-      core.worker.onmessage = ({ data }) => {
-        core.cnt = data;
-      };
-    }, NEXT_TICK);
+  restartWorker(core: Core): void {
+    if (core.worker) {
+      core.worker.terminate();
+    }
+    core.worker = new Worker('./cpu-load.worker', { type: 'module' });
+    core.worker.onmessage = ({ data }) => core.cnt = data;
     core.cnt = 0;
+  }
+
+  runWorker(core: Core): void {
+    core.worker.postMessage(WHATEVER);
   }
 
   terminateWorker(core: Core): void {
     core.worker.terminate();
-    core.worker = UNDEFINED;
-    core.cnt = UNDEFINED;
   }
 
   change(): void {
     // after tick, values are correct
     setTimeout(() => {
       this.cores.map((core: Core) => {
-        if (core.value && !core.worker) {
-          this.spawnWorker(core);
-        }
-        if (!core.value && core.worker) {
-          this.terminateWorker(core);
+        if (core.value) {
+          this.runWorker(core);
+        } else {
+           this.restartWorker(core);
         }
       });
 
@@ -73,7 +74,7 @@ export class CpuLoadComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.cores.map((core: Core) => core.worker && core.worker.terminate());
+    this.cores.map(this.terminateWorker);
   }
 
 }
