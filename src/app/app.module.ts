@@ -17,6 +17,7 @@ import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeModule } from 'ng-qrcode';
@@ -53,6 +54,7 @@ import { MarkdownComponent } from './tools/markdown/markdown.component';
     MatFormFieldModule,
     MatInputModule,
     MatCheckboxModule,
+    MatGridListModule,
     NgQrScannerModule,
     QrCodeModule,
   ],

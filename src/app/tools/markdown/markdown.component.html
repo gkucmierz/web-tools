@@ -1,1 +1,17 @@
-<p>markdown works!</p>
+
+<div class="markdown-tool">
+  <mat-grid-list cols="2">
+
+    <mat-grid-tile>
+      <mat-form-field class="source" appearance="outline">
+        <mat-label>Text to Encode/Decode</mat-label>
+        <textarea matInput [(ngModel)]="source"></textarea>
+      </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+      {{ output }}
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>
