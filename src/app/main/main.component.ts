@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { MarkdownService } from '../services/markdown.service';
 
 @Component({
@@ -6,11 +6,15 @@ import { MarkdownService } from '../services/markdown.service';
   templateUrl: './main.component.html',
   styleUrls: ['./main.component.scss']
 })
-export class MainComponent implements OnInit {
-  md: string;
+export class MainComponent {
+  md = `
+# Web Tools
 
-  constructor(private markdown: MarkdownService) { }
+All kinds of web tools included in one compact web-app
+`;
+  html: string;
 
-  ngOnInit(): void { }
-
+  constructor(private markdown: MarkdownService) {
+    this.html = this.markdown.compile(this.md);
+  }
 }
