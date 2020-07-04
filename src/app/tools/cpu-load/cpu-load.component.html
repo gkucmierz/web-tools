@@ -1,13 +1,12 @@
 
-<p>cpu-load works!</p>
-
-{{ cores | json }}
-
 <mat-list role="list">
   <mat-list-item role="listitem" *ngFor="let core of cores;">
     <mat-slide-toggle
       [(ngModel)]="core.value"
-      (toggleChange)="change()">Core {{ core.idx }}</mat-slide-toggle>
+      (toggleChange)="change()">
+      Core {{ core.idx }}
+      <span *ngIf="core.cnt !== undefined">({{ core.cnt }})</span>
+    </mat-slide-toggle>
   </mat-list-item>
 
   <mat-divider></mat-divider>
@@ -20,3 +19,4 @@
   </mat-list-item>
 </mat-list>
 
+<!-- {{ cores | json }} -->
