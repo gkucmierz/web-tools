@@ -22,6 +22,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeModule } from 'ng-qrcode';
 
+import { MainComponent } from './main/main.component';
 import { MenuComponent } from './menu/menu.component';
 import { QrScannerComponent } from './tools/qr-scanner/qr-scanner.component';
 import { QrCodeComponent } from './tools/qr-code/qr-code.component';
@@ -32,6 +33,7 @@ import { MarkdownComponent } from './tools/markdown/markdown.component';
 @NgModule({
   declarations: [
     AppComponent,
+    MainComponent,
     MenuComponent,
     QrScannerComponent,
     QrCodeComponent,
