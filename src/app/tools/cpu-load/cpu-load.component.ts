@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 const UNDEFINED = [][0];
 const NEXT_TICK = 0;
@@ -15,7 +15,7 @@ type Core = {
   templateUrl: './cpu-load.component.html',
   styleUrls: ['./cpu-load.component.scss']
 })
-export class CpuLoadComponent implements OnInit {
+export class CpuLoadComponent implements OnInit, OnDestroy {
   cores: Core[];
 
   constructor() {
@@ -70,6 +70,10 @@ export class CpuLoadComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  ngOnDestroy(): void {
+    this.cores.map((core: Core) => core.worker && core.worker.terminate());
   }
 
 }
