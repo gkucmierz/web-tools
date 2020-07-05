@@ -1,0 +1,39 @@
+
+<section class="section">
+  <mat-checkbox
+    class="margin"
+    [(ngModel)]="showIds"
+    (change)="change()">
+    Show IDs
+  </mat-checkbox>
+
+  <mat-checkbox
+    class="margin"
+    [(ngModel)]="showKeys"
+    (change)="change()">
+    Show Keys
+  </mat-checkbox>
+
+  <mat-checkbox
+    class="margin"
+    [(ngModel)]="getCapabilities"
+    (change)="change()">
+    Get Capabilities
+  </mat-checkbox>
+</section>
+
+<div *ngIf="error" class="error">
+  <p>Error while loading devices:</p>
+  <p>{{ error }}
+</div>
+
+<div *ngIf="!error">
+  <div *ngIf="devices.length">
+    <p>Found {{ devices.length }} devices</p>
+    <pre>{{ devices | json }}</pre>
+  </div>
+
+  <div *ngIf="!devices.length">
+    <p>Loading Media Devices info…</p>
+  </div>
+</div>

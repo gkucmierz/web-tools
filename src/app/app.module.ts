@@ -31,6 +31,7 @@ import { PasswordsComponent } from './tools/passwords/passwords.component';
 import { Base64Component } from './tools/base64/base64.component';
 import { MarkdownComponent } from './tools/markdown/markdown.component';
 import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
+import { MediaDevicesComponent } from './tools/media-devices/media-devices.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
     Base64Component,
     MarkdownComponent,
     CpuLoadComponent,
+    MediaDevicesComponent,
   ],
   imports: [
     BrowserModule,
