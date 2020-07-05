@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
-
 import { QrScannerComponent as QrScanner } from 'angular2-qrscanner';
+import { waitProp } from 'wait-prop';
 
 @Component({
   selector: 'app-qr-scanner',
@@ -28,20 +28,8 @@ export class QrScannerComponent implements OnInit {
     this.qrScanner.chooseCamera.next(this.cameras[this.cameraIdx]);
   }
 
-  wait(prop, cb): void {
-    const DELAY = 50;
-    const loop = () => {
-      if (prop in this) {
-        cb(this[prop]);
-      } else {
-        setTimeout(loop, DELAY);
-      }
-    };
-    loop();
-  }
-
   ngOnInit(): void {
-    this.wait('qrScanner', qrScanner => {
+    waitProp(this, 'qrScanner').then(qrScanner => {
       this.qrScanner.getMediaDevices().then(devices => {
         const videoDevices: MediaDeviceInfo[] = [];
         let choosenDev;
