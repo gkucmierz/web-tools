@@ -1,0 +1,45 @@
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Fahrenheit</mat-label>
+  <input matInput
+    type="number"
+    [ngModel]="fahrenheit"
+    (input)="onSearchChange($event.target.value, 'fahrenheit')">
+  <span matSuffix>°F</span>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Rankine</mat-label>
+  <input matInput
+    type="number"
+    [ngModel]="rankine"
+    (input)="onSearchChange($event.target.value, 'rankine')">
+  <span matSuffix>°R</span>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Celsius</mat-label>
+  <input matInput
+    type="number"
+    [ngModel]="celsius"
+    (input)="onSearchChange($event.target.value, 'celsius')">
+  <span matSuffix>°C</span>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Centigrade</mat-label>
+  <input matInput
+    type="number"
+    [ngModel]="centigrade"
+    (input)="onSearchChange($event.target.value, 'centigrade')">
+  <span matSuffix>°C</span>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline">
+  <mat-label>Kelvin</mat-label>
+  <input matInput
+    type="number"
+    [ngModel]="kelvin"
+    (input)="onSearchChange($event.target.value, 'kelvin')">
+  <span matSuffix>K</span>
+</mat-form-field>

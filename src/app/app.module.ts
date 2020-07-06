@@ -32,6 +32,7 @@ import { Base64Component } from './tools/base64/base64.component';
 import { MarkdownComponent } from './tools/markdown/markdown.component';
 import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
 import { MediaDevicesComponent } from './tools/media-devices/media-devices.component';
+import { TemperatureConverterComponent } from './tools/temperature-converter/temperature-converter.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { MediaDevicesComponent } from './tools/media-devices/media-devices.compo
     MarkdownComponent,
     CpuLoadComponent,
     MediaDevicesComponent,
+    TemperatureConverterComponent,
   ],
   imports: [
     BrowserModule,
