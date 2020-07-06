@@ -32,7 +32,6 @@ export class QrScannerComponent implements OnInit {
     waitProp(this, 'qrScanner').then(qrScanner => {
       this.qrScanner.getMediaDevices().then(devices => {
         const videoDevices: MediaDeviceInfo[] = [];
-        let choosenDev;
 
         for (const device of devices) {
           if (device.kind.toString() === 'videoinput') {
@@ -40,16 +39,15 @@ export class QrScannerComponent implements OnInit {
           }
         }
 
-        choosenDev = videoDevices[0];
         if (videoDevices.length > 0) {
           for (const dev of videoDevices) {
-            if (dev.label.includes('front')) {
-              choosenDev = dev;
-              break;
+            if (dev.label.includes('back')) {
+              this.cameras.push(dev);
             }
           }
         }
 
+        const choosenDev = this.cameras.slice(-1)[0] || videoDevices[0];
         this.changeCamera(this.cameras.indexOf(choosenDev));
       });
 
