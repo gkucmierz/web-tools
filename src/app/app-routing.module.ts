@@ -14,15 +14,51 @@ import { SocialLinksComponent } from './tools/social-links/social-links.componen
 
 const routes: Routes = [
   { path: '', component: MainComponent },
-  { path: 'base64', component: Base64Component },
-  { path: 'cpu-load', component: CpuLoadComponent },
-  { path: 'markdown', component: MarkdownComponent },
-  { path: 'media-devices', component: MediaDevicesComponent },
-  { path: 'passwords', component: PasswordsComponent },
-  { path: 'social-links', component: SocialLinksComponent },
-  { path: 'temperature-converter', component: TemperatureConverterComponent },
-  { path: 'qr-scanner', component: QrScannerComponent },
-  { path: 'qr-code', component: QrCodeComponent },
+  {
+    path: 'base64',
+    component: Base64Component,
+    data: { title: 'Base64 Transcoder' },
+  },
+  {
+    path: 'cpu-load',
+    component: CpuLoadComponent,
+    data: { title: 'CPU Load' },
+  },
+  {
+    path: 'markdown',
+    component: MarkdownComponent,
+    data: { title: 'Markdown Editor' },
+  },
+  {
+    path: 'media-devices',
+    component: MediaDevicesComponent,
+    data: { title: 'Media Devices Inspector' },
+  },
+  {
+    path: 'passwords',
+    component: PasswordsComponent,
+    data: { title: 'Passwords Generator' },
+  },
+  {
+    path: 'social-links',
+    component: SocialLinksComponent,
+    data: { title: 'Social Links Sanitizer' },
+  },
+  {
+    path: 'temperature-converter',
+    component: TemperatureConverterComponent,
+    data: { title: 'Temperature Converter' },
+  },
+  {
+    path: 'qr-scanner',
+    component: QrScannerComponent,
+    data: { title: 'QR Scanner' },
+  },
+  {
+    path: 'qr-code',
+    component: QrCodeComponent,
+    data: { title: 'QR Code Generator' },
+  },
 ];
 
 @NgModule({
