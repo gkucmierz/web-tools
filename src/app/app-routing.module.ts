@@ -10,6 +10,7 @@ import { MarkdownComponent } from './tools/markdown/markdown.component';
 import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
 import { MediaDevicesComponent } from './tools/media-devices/media-devices.component';
 import { TemperatureConverterComponent } from './tools/temperature-converter/temperature-converter.component';
+import { SocialLinksComponent } from './tools/social-links/social-links.component';
 
 const routes: Routes = [
   { path: '', component: MainComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'markdown', component: MarkdownComponent },
   { path: 'media-devices', component: MediaDevicesComponent },
   { path: 'passwords', component: PasswordsComponent },
+  { path: 'social-links', component: SocialLinksComponent },
   { path: 'temperature-converter', component: TemperatureConverterComponent },
   { path: 'qr-scanner', component: QrScannerComponent },
   { path: 'qr-code', component: QrCodeComponent },
