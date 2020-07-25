@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SocialLinks } from 'social-links';
+import { SocialLinks, TYPE_DESKTOP, TYPE_MOBILE } from 'social-links';
 
 const SOCIALS = [
   'linkedin', 'twitter', 'facebook', 'youtube', 'twitch',
   'instagram', 'patreon', 'github', 'medium', 'dribbble', 'behance'
 ];
+
+const getType = type => [0, TYPE_DESKTOP, TYPE_MOBILE][type];
 
 @Component({
   selector: 'app-social-links',
@@ -15,6 +17,7 @@ export class SocialLinksComponent implements OnInit {
   socials = SOCIALS;
   social = SOCIALS[0];
   value = '';
+  type = 0;
   result = { };
   trimInput = true;
   allowQueryParams = false;
@@ -32,7 +35,10 @@ export class SocialLinksComponent implements OnInit {
     const isValid = sl.isValid(this.social, this.value);
 
     try {
-      const sanitized = sl.sanitize(this.social, this.value);
+      const sanitized = (this.type ?
+        sl.sanitize(this.social, this.value, getType(this.type)) :
+        sl.sanitize(this.social, this.value)
+      );
       const profileId = sl.getProfileId(this.social, this.value);
       this.result = { [this.social]: { isValid, profileId, sanitized } };
     } catch (e) {

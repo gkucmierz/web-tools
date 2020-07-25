@@ -17,6 +17,16 @@
   </li>
 </ul>
 
+<mat-radio-group
+  aria-labelledby="Select link type"
+  class="radio-group"
+  [(ngModel)]="type"
+  (change)="onChange()">
+  <mat-radio-button [value]="0">default</mat-radio-button>
+  <mat-radio-button [value]="1">desktop</mat-radio-button>
+  <mat-radio-button [value]="2">mobile</mat-radio-button>
+</mat-radio-group>
+
 <mat-form-field class="full-width" appearance="outline" *ngIf="social">
   <mat-label>{{ social }}</mat-label>
   <input matInput
