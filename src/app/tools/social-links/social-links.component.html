@@ -1,2 +1,18 @@
 
-<p>social-links works!</p>
+<mat-form-field appearance="fill" class="full-width">
+  <mat-label>Social Links</mat-label>
+  <mat-select [(ngModel)]="social">
+    <mat-option *ngFor="let social of socials" [value]="social">
+      {{ social }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+<mat-form-field class="full-width" appearance="outline" *ngIf="social">
+  <mat-label>{{ social }}</mat-label>
+  <input matInput
+    type="text"
+    (input)="onSearchChange($event.target.value, social)">
+</mat-form-field>
+
+<pre>{{ result | json }}</pre>

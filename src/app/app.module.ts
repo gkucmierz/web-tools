@@ -19,6 +19,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { MatSelectModule } from '@angular/material/select';
 
 import { NgQrScannerModule } from 'angular2-qrscanner';
 import { QrCodeModule } from 'ng-qrcode';
@@ -67,6 +68,7 @@ import { SocialLinksComponent } from './tools/social-links/social-links.componen
     MatCheckboxModule,
     MatGridListModule,
     MatSlideToggleModule,
+    MatSelectModule,
     NgQrScannerModule,
     QrCodeModule,
   ],
