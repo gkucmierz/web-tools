@@ -1,18 +1,28 @@
 
 <mat-form-field appearance="fill" class="full-width">
   <mat-label>Social Links</mat-label>
-  <mat-select [(ngModel)]="social">
+  <mat-select [(ngModel)]="social" (selectionChange)="onChange()">
     <mat-option *ngFor="let social of socials" [value]="social">
       {{ social }}
     </mat-option>
   </mat-select>
 </mat-form-field>
 
+<ul>
+  <li>
+    <mat-checkbox [(ngModel)]="trimInput" (input)="onChange()">trimInput</mat-checkbox>
+  </li>
+  <li>
+    <mat-checkbox [(ngModel)]="allowQueryParams" (input)="onChange()">allowQueryParams</mat-checkbox>
+  </li>
+</ul>
+
 <mat-form-field class="full-width" appearance="outline" *ngIf="social">
   <mat-label>{{ social }}</mat-label>
   <input matInput
+    [(ngModel)]="value"
     type="text"
-    (input)="onSearchChange($event.target.value, social)">
+    (input)="onChange()">
 </mat-form-field>
 
 <pre>{{ result | json }}</pre>
