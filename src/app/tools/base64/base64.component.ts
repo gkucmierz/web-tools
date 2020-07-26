@@ -14,6 +14,7 @@ const atou = (b64: string): string => decodeURIComponent(escape(atob(b64)));
  */
 const utoa = (data: string): string => btoa(unescape(encodeURIComponent(data)));
 
+
 @Component({
   selector: 'app-base64',
   templateUrl: './base64.component.html',

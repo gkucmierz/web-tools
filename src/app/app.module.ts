@@ -36,6 +36,8 @@ import { CpuLoadComponent } from './tools/cpu-load/cpu-load.component';
 import { MediaDevicesComponent } from './tools/media-devices/media-devices.component';
 import { TemperatureConverterComponent } from './tools/temperature-converter/temperature-converter.component';
 import { SocialLinksComponent } from './tools/social-links/social-links.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -73,6 +75,7 @@ import { SocialLinksComponent } from './tools/social-links/social-links.componen
     MatRadioModule,
     NgQrScannerModule,
     QrCodeModule,
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
   ],
   providers: [],
   bootstrap: [AppComponent]
