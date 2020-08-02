@@ -1,3 +1,6 @@
+
+![code scanning](https://github.com/gkucmierz/web-tools/workflows/Code%20scanning%20-%20action/badge.svg)
+
 # WebTools
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.0.
