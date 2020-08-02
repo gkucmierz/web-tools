@@ -1,6 +1,6 @@
 {
-  "name": "web-tools",
-  "short_name": "web-tools",
+  "name": "Awesome Web Tools",
+  "short_name": "Web Tools",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
