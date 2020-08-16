@@ -1,10 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { SocialLinks, TYPE_DESKTOP, TYPE_MOBILE } from 'social-links';
 
-const SOCIALS = [
-  'linkedin', 'twitter', 'facebook', 'youtube', 'twitch',
-  'instagram', 'patreon', 'github', 'medium', 'dribble', 'behance'
-];
+const SOCIALS = (() => {
+  const sl = new SocialLinks();
+  return sl.getProfileNames();
+})();
 
 const getType = type => [0, TYPE_DESKTOP, TYPE_MOBILE][type];
 
