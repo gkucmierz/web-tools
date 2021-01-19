@@ -4,6 +4,7 @@ const LOWER_CASE = 'abcdefghijklmnopqrstuvwxyz';
 const UPPER_CASE = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const DIGITS = '0123456789';
 const SPECIAL_CHARS = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~';
+const SIMILAR_CHARS = new Set([...'iIl10oO8B3Evu![]{}']);
 
 @Component({
   selector: 'app-passwords',
@@ -15,6 +16,7 @@ export class PasswordsComponent implements OnInit {
   upperCase = true;
   digits = true;
   specialChars = false;
+  skipSimilar = true;
   other = false;
   otherChars = '😄🤖';
   passwordLength = 16;
@@ -37,14 +39,15 @@ export class PasswordsComponent implements OnInit {
       ...(this.other ? [this.otherChars] : []),
     ].join('')];
 
+    const skipSimilar = this.skipSimilar ? [...chars].filter(char => !SIMILAR_CHARS.has(char)) : chars;
     const size = this.passwordsNumber * this.passwordLength;
     const rand = new Uint32Array(size);
-    
+
     crypto.getRandomValues(rand);
     let pointer = 0;
     this.passwords = array(this.passwordsNumber).map(() => {
       return array(this.passwordLength).map(() => {
-        return chars[rand[pointer++] % chars.length];
+        return skipSimilar[rand[pointer++] % skipSimilar.length];
       }).join('');
     }).join('\n');
   }
